@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "worker_group_mgmt_one" {
-  name_prefix = "worker_group_mgmt_one"
+  name_prefix = "${var.sec_group_name_prefix}_one"
   vpc_id      = module.vpc.vpc_id
 
   ingress {
@@ -15,7 +15,7 @@ resource "aws_security_group" "worker_group_mgmt_one" {
 }
 
 resource "aws_security_group" "worker_group_mgmt_two" {
-  name_prefix = "worker_group_mgmt_two"
+  name_prefix = "${var.sec_group_name_prefix}_two"
   vpc_id      = module.vpc.vpc_id
 
   ingress {
